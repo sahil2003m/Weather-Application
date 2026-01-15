@@ -1,320 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sahil Mahamulkar | Java Developer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- 3D Animated Background -->
-    <div class="background-3d">
-        <div class="cube"></div>
-        <div class="pyramid"></div>
-        <div class="sphere"></div>
-        <div class="cylinder"></div>
-        <div class="torus"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeatherSphere Mini</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Moving Weather Background -->
+<div class="weather-background">
+    <div class="sky-background"></div>
+    <div class="sun-moon"></div>
+    <div class="floating-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
     </div>
+    <div class="weather-overlay"></div>
+</div>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-text">SAHIL</span>
-                <span class="logo-dot">.</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#achievements" class="nav-link">Achievements</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
+    <!-- Compact Header -->
+    <header class="mini-header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo-small">
+            <i class="fas fa-cloud-sun"></i>
+            <span>WeatherSphere</span>
+          </div>
+          <div class="header-time">
+            <span id="current-time" class="time-small"></span>
+            <span id="current-date" class="date-small"></span>
+          </div>
         </div>
-    </nav>
+      </div>
+    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title">SAHIL MAHAMULKAR</h1>
-                <h2 class="hero-subtitle">Java Developer</h2>
-                <p class="hero-description">
-                    Entry-level Java Developer with hands-on experience in Core Java, JDBC, JPA, Hibernate, Spring Core, and Spring Boot. 
-                    Strong understanding of object-oriented programming and backend application development.
-                </p>
-                <a href="#about" class="cta-button">
-                    <span>Explore My Work</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-            <div class="hero-visual">
-                <div class="floating-shapes">
-                    <div class="shape shape-1"><i class="fab fa-java"></i></div>
-                    <div class="shape shape-2"><i class="fas fa-database"></i></div>
-                    <div class="shape shape-3"><i class="fas fa-server"></i></div>
-                    <div class="shape shape-4"><i class="fas fa-code"></i></div>
-                </div>
-            </div>
+    <!-- Main Container -->
+    <main class="container">
+      <!-- Search Row -->
+      <div class="search-row">
+        <div class="search-box-mini">
+          <input
+            type="text"
+            id="city-input"
+            placeholder="Search city..."
+            value="Pune"
+          />
+          <button id="search-btn" class="btn-search">
+            <i class="fas fa-search"></i>
+          </button>
         </div>
-    </section>
+        <div class="search-suggestions">
+          <span class="suggestion" data-city="London">London</span>
+          <span class="suggestion" data-city="Tokyo">Tokyo</span>
+          <span class="suggestion" data-city="New York">New York</span>
+          <span class="suggestion" data-city="Dubai">Dubai</span>
+        </div>
+      </div>
 
-    <!-- About Section -->
-    <section id="about" class="section about-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">INTRODUCTION</h2>
-                <div class="section-divider"></div>
-                <h3 class="section-subtitle">Overview.</h3>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        I'm <strong>Sahil Mahamulkar</strong>. A passionate Java Developer with expertise in Core Java, Spring Framework, 
-                        and backend development. I'm a quick learner focused on creating efficient, scalable, and robust solutions 
-                        that solve real-world problems. Let's work together to bring ideas to life!
-                    </p>
-                    <a href="#" class="download-btn">
-                        <i class="fas fa-download"></i>
-                        <span>Download Resume</span>
-                    </a>
-                </div>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h4>Core Technologies</h4>
-                        <ul>
-                            <li>Core Java</li>
-                            <li>Spring Boot</li>
-                            <li>Hibernate</li>
-                            <li>JDBC</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Web Development</h4>
-                        <ul>
-                            <li>HTML5 & CSS3</li>
-                            <li>JavaScript</li>
-                            <li>Responsive Design</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Database</h4>
-                        <ul>
-                            <li>SQL Server</li>
-                            <li>MySQL</li>
-                            <li>Database Design</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Tools & Others</h4>
-                        <ul>
-                            <li>Git & GitHub</li>
-                            <li>REST APIs</li>
-                            <li>OOP Principles</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+      <!-- Main Weather Card -->
+      <div class="main-weather-card">
+        <div class="card-header-mini">
+          <h3 class="card-title">Current Weather</h3>
+          <button class="btn-refresh" id="refresh-main">
+            <i class="fas fa-redo-alt"></i>
+          </button>
         </div>
-    </section>
+        <div class="weather-content" id="main-weather">
+          <div class="loading-small">
+            <div class="spinner-small"></div>
+            <span>Loading...</span>
+          </div>
+        </div>
+      </div>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section projects-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">MY PROJECTS</h2>
-                <div class="section-divider"></div>
-                <h3 class="section-subtitle">Shaping Ideas into Real Projects that Deliver Results</h3>
-            </div>
-            
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Student Management System</h3>
-                        <div class="project-tech">
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">OOP</span>
-                            <span class="tech-tag">JDBC</span>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        A comprehensive system for managing student records with features to add, update, delete, 
-                        and retrieve student information. Built with Core Java following OOP principles.
-                    </p>
-                    <div class="project-links">
-                        <a href="#" class="project-link">
-                            <i class="fas fa-external-link-alt"></i>
-                            <span>View Project Details</span>
-                        </a>
-                        <a href="#" class="project-link">
-                            <i class="fab fa-github"></i>
-                            <span>View on GitHub</span>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>RedBus Booking System</h3>
-                        <div class="project-tech">
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">Data Structures</span>
-                            <span class="tech-tag">OOP</span>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        A bus booking system implementing custom dynamic arrays and in-memory database 
-                        with seat booking restrictions and user management functionalities.
-                    </p>
-                    <div class="project-links">
-                        <a href="#" class="project-link">
-                            <i class="fas fa-external-link-alt"></i>
-                            <span>View Project Demo</span>
-                        </a>
-                        <a href="#" class="project-link">
-                            <i class="fab fa-github"></i>
-                            <span>Source Code</span>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Spring Boot REST API</h3>
-                        <div class="project-tech">
-                            <span class="tech-tag">Spring Boot</span>
-                            <span class="tech-tag">REST API</span>
-                            <span class="tech-tag">JPA</span>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        A robust RESTful API built with Spring Boot and JPA for managing resources with 
-                        full CRUD operations, exception handling, and data validation.
-                    </p>
-                    <div class="project-links">
-                        <a href="#" class="project-link">
-                            <i class="fas fa-external-link-alt"></i>
-                            <span>API Documentation</span>
-                        </a>
-                        <a href="#" class="project-link">
-                            <i class="fab fa-github"></i>
-                            <span>View Repository</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+      <!-- Compact Grid -->
+      <div class="compact-grid">
+        <!-- Details Card -->
+        <div class="details-card-mini">
+          <div class="card-header-mini">
+            <h3 class="card-title">Details</h3>
+          </div>
+          <div class="details-grid-mini" id="weather-details">
+            <!-- Details will load here -->
+          </div>
         </div>
-    </section>
 
-    <!-- Achievements Section -->
-    <section id="achievements" class="section achievements-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">ACHIEVEMENTS</h2>
-                <div class="section-divider"></div>
-                <h3 class="section-subtitle">What I Have Achieved So Far</h3>
+        <!-- Recent Searches -->
+        <div class="recent-card-mini">
+          <div class="card-header-mini">
+            <h3 class="card-title">Recent</h3>
+            <button class="btn-clear" id="clear-history">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+          <div class="recent-list" id="recent-searches">
+            <div class="empty-state-small">
+              <i class="fas fa-history"></i>
+              <span>No recent searches</span>
             </div>
-            
-            <div class="achievements-timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">2024</div>
-                    <div class="timeline-content">
-                        <h4>Java Development Certification</h4>
-                        <p>Completed comprehensive Java certification covering Core Java, JDBC, and Spring Framework fundamentals.</p>
-                        <a href="#" class="credential-link">
-                            <span>View Credential</span>
-                            <i class="fas fa-external-link-alt"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">2023</div>
-                    <div class="timeline-content">
-                        <h4>Database Management Certification</h4>
-                        <p>Certified in SQL Server and database design principles with hands-on experience in CRUD operations.</p>
-                        <a href="#" class="credential-link">
-                            <span>View Credential</span>
-                            <i class="fas fa-external-link-alt"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">2022</div>
-                    <div class="timeline-content">
-                        <h4>Web Development Fundamentals</h4>
-                        <p>Certification in HTML5, CSS3, and responsive web design principles.</p>
-                        <a href="#" class="credential-link">
-                            <span>View Credential</span>
-                            <i class="fas fa-external-link-alt"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section contact-section">
-        <div class="container">
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h2 class="contact-title">Let's Connect</h2>
-                    <p class="contact-description">
-                        Interested in collaborating or have questions about my work? 
-                        Feel free to reach out to me.
-                    </p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>sahilmahamulkar2003@gmail.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Maharashtra, India</span>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="#" class="social-link">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="contact-visual">
-                    <div class="contact-shape">
-                        <i class="fas fa-code"></i>
-                    </div>
-                </div>
-            </div>
+      <!-- Global Cities -->
+      <div class="global-section-mini">
+        <div class="section-header-mini">
+          <h3 class="section-title">Global Cities</h3>
+          <button class="btn-refresh-small" id="refresh-global">
+            <i class="fas fa-sync-alt"></i>
+          </button>
         </div>
-    </section>
+        <div class="global-grid" id="global-cities">
+          <!-- Global cities will load here -->
+        </div>
+      </div>
+    </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">SAHIL MAHAMULKAR</div>
-                <p class="footer-text">Java Developer & Backend Specialist</p>
-                <p class="footer-copyright">© 2023 Sahil Mahamulkar. All rights reserved.</p>
-            </div>
+    <!-- Mini Footer -->
+    <footer class="mini-footer">
+      <div class="container">
+        <span class="footer-text">Weather Data © OpenWeather</span>
+        <div class="footer-links-mini">
+          <a href="#" class="footer-link"><i class="fas fa-info-circle"></i></a>
+          <a href="#" class="footer-link"><i class="fas fa-cog"></i></a>
+          <a href="#" class="footer-link"><i class="fas fa-share-alt"></i></a>
         </div>
+      </div>
     </footer>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
